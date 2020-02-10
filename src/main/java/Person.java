@@ -1,5 +1,4 @@
 public class Person {
-
     //declaring instance variables
     private String name;
     private int age;
@@ -29,5 +28,13 @@ public class Person {
 
     public int getAge() {
         return age;
+    }
+
+    public String[] getInterest() {
+        return interest;
+    }
+
+    public void setInterest(String[] interest) {
+        this.interest = interest;
     }
 }
