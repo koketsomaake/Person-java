@@ -4,7 +4,6 @@ public class Person {
     private int age;
     private String gender;
     private String[] interest;
-
     //overloaded constructor
     public Person(String name, int age, String gender, String[] interest) {
         this.name = name;
@@ -12,29 +11,21 @@ public class Person {
         this.gender = gender;
         this.interest = interest;
     }
-
-
-    public String hello()
-    {
-        //  returning my personal info
-
-        return "Hello, my name is " + name + " and I am " + age + " years old "
-            + gender + " . My interest are " + interest[0] + " , " + interest[1] + " and " + interest[2];
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public String[] getInterest() {
-        return interest;
-    }
-
-    public void setInterest(String[] interest) {
-        this.interest = interest;
+    public String hello() {
+        // returning my personal info
+        String message = "";
+        String punctuation = "";
+        for (int i = 0; i < interest.length; i++) {
+            if(i >0 && i < interest.length-1) {
+                punctuation +=", ";
+            }
+            if(i == interest.length-1) {
+                punctuation +=" and ";
+            }
+            punctuation += interest[i];
+        }
+        message="Hello, my name is " + name + " and I am " + age + " years old "
+                + gender + " . My interest are " ;
+        return message + punctuation + ".";
     }
 }
